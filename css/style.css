@@ -29,3 +29,45 @@ nav ul li a {
 nav ul li a:hover {
     background-color: #2e343a;
 }
+/*Contenedores*/
+/*Contenedor galeria imagenes con efecto*/
+.container_imagenes_inicio {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+.container_imagenes_inicio img {
+    width: 350px;
+    height: 350px;
+    transition: transform 0.3s ease;
+}
+/* Agranda la imagen al pasar el mouse */
+.container_imagenes_inicio img:hover {
+    transform: scale(1.1);
+}
+/*Contenedores de categorias de juegos de mesa*/
+.category {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    width: calc(50% - 22px); /* Cambiar a 50% para dos categorías por fila */
+    box-sizing: border-box;
+    float: left;
+}
+.category img {
+    max-width: 100%;
+}
+.category h3 {
+    margin: 10px 0;
+}
+.category p {
+    margin: 5px 0;
+}
+.category img {
+    width: 250px;
+    height: 200px;
+}
+.clear {
+    clear: both;
+}
