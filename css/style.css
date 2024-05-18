@@ -30,6 +30,15 @@ nav ul li a:hover {
     background-color: #2e343a;
 }
 /*Contenedores*/
+.container {
+    padding: 20px;
+}
+.container_nombre_sitio{
+    text-align: center;
+}
+h2{
+    text-align: center;
+}
 /*Contenedor galeria imagenes con efecto*/
 .container_imagenes_inicio {
     display: flex;
@@ -70,4 +79,49 @@ nav ul li a:hover {
 }
 .clear {
     clear: both;
+}
+/*Contenedores de productos de juegos de mesa*/
+.product {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    width: calc(33.333% - 22px);
+    box-sizing: border-box;
+    float: left;
+}
+.product img {
+    width: 150px;
+    height: 150px;
+}
+.product h3 {
+    margin: 10px 0;
+}
+.product p {
+    margin: 5px 0;
+}
+.button {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #f79e17;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.button:hover {
+    background-color: #2e343a; /* Cambia el color de fondo al pasar el mouse */
+    transform: scale(1.1); /* Agranda el botón al pasar el mouse */
+}
+.precio{
+    color: rgb(13, 182, 27);
+    font-weight: bold;
+}
+.precio span s {
+    color: gray; 
 }
