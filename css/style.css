@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+/*Menú principal*/
+nav {
+    background-color: #f79e17;
+    overflow: hidden;
+    display: flex;
+    justify-content: center; /* Centra el contenido del nav */
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Hace que los elementos de la lista se alineen en fila */
+}
+nav ul li {
+    margin: 0 10px; /* Añade espacio entre los elementos del menú */
+}
+nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+nav ul li a:hover {
+    background-color: #2e343a;
+}
