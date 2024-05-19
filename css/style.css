@@ -27,7 +27,7 @@ nav ul li a {
     text-decoration: none;
 }
 nav ul li a:hover {
-    background-color: #2e343a;
+    background-color: #2e343a; /* Efecto 1: Añade espacio entre los elementos del menú */
 }
 /*Contenedores*/
 .container {
@@ -35,6 +35,7 @@ nav ul li a:hover {
 }
 .container_nombre_sitio{
     text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 h2{
     text-align: center;
@@ -44,13 +45,15 @@ h2{
     display: flex;
     justify-content: space-between;
     margin: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .container_imagenes_inicio img {
-    width: 350px;
-    height: 350px;
+    width: 250px;
+    height: 250px;
     transition: transform 0.3s ease;
 }
-/* Agranda la imagen al pasar el mouse */
+/* Efecto 2: Agranda la imagen al pasar el mouse */
 .container_imagenes_inicio img:hover {
     transform: scale(1.1);
 }
@@ -115,8 +118,8 @@ h2{
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 .button:hover {
-    background-color: #2e343a; /* Cambia el color de fondo al pasar el mouse */
-    transform: scale(1.1); /* Agranda el botón al pasar el mouse */
+    background-color: #2e343a; /*  Efecto 3: Cambia el color de fondo al pasar el mouse */
+    transform: scale(1.1); /* Efecto 4: Agranda el botón al pasar el mouse */
 }
 .precio{
     color: rgb(13, 182, 27);
@@ -151,4 +154,58 @@ ul.breadcrumb li a {
 ul.breadcrumb li a:hover {
     color: #01447e;
     text-decoration: underline;
+}
+
+/*Responsive*/
+@media (max-width: 768px) {
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column; /* Cambia la dirección de los elementos de la lista a columna */
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Añade espacio entre los elementos del menú vertical */
+    }
+
+    nav ul li a {
+        padding: 10px 20px; /* Ajusta el espaciado interno de los enlaces */
+    }
+    .category {
+        width: calc(50% - 20px);
+    }
+    .product {
+        width: calc(50% - 20px);
+    }
+}
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    nav ul li {
+        margin: 5px 0;
+        width: 100%;
+        text-align: center;
+    }
+    nav ul li a {
+        width: 100%;
+        padding: 14px 0;
+    }
+
+    .category {
+        width: calc(100% - 20px);
+        float: none;
+        margin: 10px auto;
+    }
+    .product {
+        width: calc(100% - 20px);
+        float: none;
+        margin: 10px auto; 
+    }
 }

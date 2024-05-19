@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saint Peter Games - Juegos de Mesa</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Saint Peter Games - Juegos de Mesa</title><!-- Nombre de la empresa -->
+    <link rel="stylesheet" type="text/css" href="css/style.css"><!-- Referencia a hoja de estilos CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script><!-- Referencia a jquery -->
 </head>
 <body>
     <div class="container_nombre_sitio">
-        <h1>Saint Peter Games</h1>
+        <h1>Saint Peter Games</h1><!-- Nombre de la empresa -->
     </div>
     <nav>
         <ul>
+            <!-- Hipervínculos -->
             <li><a href="index.html">Inicio</a></li>
-            <li><a href="familiar.html">Familiar</a></li>
-            <li><a href="infantil.html">Infantil</a></li>
-            <li><a href="cooperativo.html">Cooperativo</a></li>
-            <li><a href="aventura.html">Aventura</a></li>
+            <li><a href="familiar.html">Familiar</a></li><!-- Categoria -->
+            <li><a href="infantil.html">Infantil</a></li><!-- Categoria -->
+            <li><a href="cooperativo.html">Cooperativo</a></li><!-- Categoria -->
+            <li><a href="aventura.html">Aventura</a></li><!-- Categoria -->
         </ul>
     </nav>
     <h2>Juegos de Mesa</h2>
@@ -29,28 +30,28 @@
         <img src="img/aventura_1.jpg" alt="Imagen 4">
     </div>
     <br>
+    <!-- Lista de categorías de juegos de mesa -->
     <h2>Categorías</h2>
     <div class="container">
-        
         <div class="category">
             <img src="img/categoria_familia.jpg" alt="Categoría 1">
             <h3>Familiar</h3>
-            <button class="button" id="btnFamiliar">Ver Productos</button>
+            <button class="button" id="btnFamiliar" onclick="window.location.href = 'familiar.html'">Ver Productos</button>
         </div>
         <div class="category">
             <img src="img/categoria_infantil.jpg" alt="Categoría 2">
             <h3>Infantil</h3>
-            <button class="button">Ver Productos</button>
+            <button class="button" id="btnInfantil" onclick="window.location.href = 'infantil.html'">Ver Productos</button>
         </div>
         <div class="category">
             <img src="img/categoria_cooperativo.jpg" alt="Categoría 3">
             <h3>Cooperativo</h3>
-            <button class="button">Ver Productos</button>
+            <button class="button" id="btnCooperativo" onclick="window.location.href = 'cooperativo.html'">Ver Productos</button>
         </div>
         <div class="category">
             <img src="img/categoria_aventura.jpg" alt="Categoría 4">
             <h3>Aventura</h3>
-            <button class="button">Ver Productos</button>
+            <button class="button" id="btnAventura" onclick="window.location.href = 'aventura.html'">Ver Productos</button>
         </div>      
         <div class="clear"></div>
     </div>
