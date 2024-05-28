@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saint Peter Games - Juegos de Mesa</title><!-- Nombre de la empresa -->
+    <link rel="stylesheet" type="text/css" href="css/style.css"><!-- Referencia a hoja de estilos CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script><!-- Referencia a jquery -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container_nombre_sitio">
+        <h1>Saint Peter Games</h1><!-- Nombre de la empresa -->
+    </div>
+    <nav>
+        <ul>
+            <!-- Hipervínculos -->
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="familiar.html">Familiar</a></li><!-- Categoria -->
+            <li><a href="infantil.html">Infantil</a></li><!-- Categoria -->
+            <li><a href="cooperativo.html">Cooperativo</a></li><!-- Categoria -->
+            <li><a href="aventura.html">Aventura</a></li><!-- Categoria -->
+            <li><a href="registro.html">Registro</a></li>
+        </ul>
+    </nav>
+    <div class="container form-container">
+        <div class="card form-card shadow p-4">
+            <h2 class="text-center">Formulario de Registro</h2>
+            <form id="registrationForm" class="needs-validation" novalidate>
+                <div class="row mt-3 justify-content-center">
+                    <div class="col-md-4">
+                        <label class="form-label">Nombre <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="txtNombre" maxlength="30" required>
+                        <div class="invalid-feedback">Este campo es obligatorio.</div>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Segundo Nombre <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="txtSegundoNombre" maxlength="30" required>
+                        <div class="invalid-feedback">Este campo es obligatorio.</div>
+                    </div>
+                </div>
+                <div class="row mt-3 justify-content-center">
+                    <div class="col-md-4">
+                        <label class="form-label">Apellido Paterno <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="txtApellidoPaterno" maxlength="30" required>
+                        <div class="invalid-feedback">Este campo es obligatorio.</div>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Apellido Materno <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="txtApellidoMaterno" maxlength="30" required>
+                        <div class="invalid-feedback">Este campo es obligatorio.</div>
+                    </div>
+                </div>
+                <div class="row mt-3 justify-content-center">
+                    <div class="col-md-4">
+                        <label class="form-label">Dirección de despacho</label>
+                        <input type="text" class="form-control" id="txtDireccion" maxlength="150">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Fecha nacimiento <span class="text-danger">*</span></label>
+                        <input type="date" class="form-control" id="dtFechaNacimiento" required>
+                        <div class="invalid-feedback fecha-nacimiento">Este campo es obligatorio.</div>
+                    </div>
+                </div>
+                <div class="row mt-3 justify-content-center">
+                    <div class="col-md-4">
+                        <label class="form-label">Nombre de usuario <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="txtUsuario" required>
+                        <div class="invalid-feedback">Este campo es obligatorio.</div>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Correo electrónico <span class="text-danger">*</span></label>
+                        <input type="email" class="form-control" id="txtCorreo" required>
+                        <div class="invalid-feedback">Por favor, introduce un correo electrónico válido.</div>
+                    </div>
+                </div>
+                <div class="row mt-3 justify-content-center">
+                    <div class="col-md-4">
+                        <label class="form-label">Contraseña <span class="text-danger">*</span></label>
+                        <input type="password" class="form-control" id="txtContrasena" required>
+                        <div class="invalid-feedback contrasena">Este campo es obligatorio.</div>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Confirmar contraseña <span class="text-danger">*</span></label>
+                        <input type="password" class="form-control" id="txtRepetirContrasena" required>
+                        <div class="invalid-feedback repetir-contrasena">Este campo es obligatorio.</div>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-10 text-end">
+                        <button class="btn btn-dark" id="btnLimpiarFormulario">Limpiar</button>
+                        <button type="submit" class="btn btn-primary" id="btnRegistrarse">Registrarse</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
+<script>
+//#region Validaciones contraseña
+$('#txtContrasena').change(function (){
+    validarContrasena();
+});
+
+$('#txtRepetirContrasena').change(function (){
+    let contrasena = $('#txtContrasena').val();
+    let repetirContrasena = $('#txtRepetirContrasena').val();
+
+    if(contrasena !== null && contrasena !== '' && repetirContrasena !== null && repetirContrasena !== ''){
+        //Validar igualdad de contraseñas
+        if(contrasena !== repetirContrasena){
+            $('.invalid-feedback.repetir-contrasena').text("Las contraseñas no son iguales.");
+            $('#txtRepetirContrasena').addClass('is-invalid');
+            $('.invalid-feedback.repetir-contrasena').show();
+            return false;
+        }
+    }
+
+    //Repetir contraseña
+    $('#txtRepetirContrasena').removeClass('is-invalid');
+    $('.invalid-feedback.repetir-contrasena').text("Este campo es obligatorio.");
+    $('.invalid-feedback.repetir-contrasena').hide();
+});
+
+function validarContrasena(){
+    let contrasena = $('#txtContrasena').val();
+    let repetirContrasena = $('#txtRepetirContrasena').val();
+
+    if (contrasena !== null && contrasena !== ''){
+        //Validar existencia de letra mayuscula, digitos, y largo de 6 a 18 caracteres
+        if (contrasena.length < 6 || contrasena.length > 18) {
+            mostrarMensajeContrasena("La contraseña debe tener entre 6 y 18 caracteres.");
+            return false;
+        }
+        if (!/[A-Z]/.test(contrasena)) {
+            mostrarMensajeContrasena("La contraseña debe contener al menos una letra mayúscula.");
+            return false;
+        }
+        if (!/\d/.test(contrasena)) {
+            mostrarMensajeContrasena("La contraseña debe contener al menos un número.");
+            return false;
+        }
+    }
+
+    //Inicializa campos con valores por defecto
+    //Contraseña
+    $('#txtContrasena').removeClass('is-invalid');
+    $('.invalid-feedback.contrasena').text("Este campo es obligatorio.");
+    $('.invalid-feedback.contrasena').hide();
+
+}
+
+function mostrarMensajeContrasena(mensaje){
+    $('#txtContrasena').addClass('is-invalid');
+    $('.invalid-feedback.contrasena').text(mensaje);
+    $('.invalid-feedback.contrasena').show();
+}
+//#endregion
+
+//#region Campo Fecha nacimiento
+$('#dtFechaNacimiento').change(function(){
+    if(this.value !== null && this.value !== ''){
+        validarEdad(this.value);
+    }else{
+        $('#dtFechaNacimiento').removeClass('is-invalid');
+        $('.invalid-feedback.fecha-nacimiento').text("Este campo es obligatorio.");
+        $('.invalid-feedback.fecha-nacimiento').show();
+    }
+});
+
+function validarEdad(fechaNacimiento) {
+    const edadMinima = 13;
+    const fechaActual = new Date().toISOString().slice(0, 10);
+
+    //Calcular edad
+    let anioNacimiento = parseInt(fechaNacimiento.substring(0, 4));
+    let mesNacimiento = parseInt(fechaNacimiento.substring(5, 7)) - 1; // Restamos 1 al mes porque en JavaScript los meses van de 0 a 11
+    let diaNacimiento = parseInt(fechaNacimiento.substring(8, 10));
+    let fechaNac = new Date(anioNacimiento, mesNacimiento, diaNacimiento);
+    let fechaHoy = new Date(fechaActual);
+    let edad = fechaHoy.getFullYear() - fechaNac.getFullYear();
+
+    // Ajustar la edad si todavía no ha pasado el cumpleaños de este año
+    if (fechaNac.getMonth() > fechaHoy.getMonth() || (fechaNac.getMonth() === fechaHoy.getMonth() && fechaNac.getDate() > fechaHoy.getDate())) {
+        edad--;
+    }
+
+    if (edad < edadMinima) {
+        $('#dtFechaNacimiento').addClass('is-invalid');
+        $('.invalid-feedback.fecha-nacimiento').text("Debes ser mayor de 13 años para registrarte.");
+        $('.invalid-feedback.fecha-nacimiento').show();
+
+        $('#btnRegistrarse').css('disabled', false);
+        return false;
+    } else{
+        //Defecto
+        $('#dtFechaNacimiento').removeClass('is-invalid');
+        $('.invalid-feedback.fecha-nacimiento').text("Este campo es obligatorio.");
+        $('.invalid-feedback.fecha-nacimiento').hide();
+        $('#btnRegistrarse').css('disabled', true);
+
+    }
+}
+//#endregion
+
+//#region Validar campos obligatorios del formulario
+//***Validación de Referencia bootstrap v5.3 => https://getbootstrap.com/docs/5.3/forms/validation/ ***
+(() => {
+    'use strict'
+    const forms = document.querySelectorAll('.needs-validation')
+    //Validar campos obligatorios
+    Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+        }, false)
+    })
+
+    //Limpiar formulario con botón
+    const resetButton = form.querySelector('#btnLimpiarFormulario');
+        if (resetButton) {
+            resetButton.addEventListener('click', () => {
+                form.reset(); // Resetear el formulario
+                form.classList.remove('was-validated'); // Eliminar las clases de validación
+            });
+        }
+})()
+//#endregion
+
+</script>
